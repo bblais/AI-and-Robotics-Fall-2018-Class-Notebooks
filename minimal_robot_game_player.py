@@ -45,6 +45,7 @@ while True:
     wait_for_turn()
 
     state=read_state()
+
     move=get_robot_move(state,player)
 
     make_move(state,move)  # does it need the state here?
