@@ -26,7 +26,7 @@ def win_status(state,player):
 
 
 def get_robot_move(state,player):
-    Q=Remember(filename='Q_data.json')
+    Q=LoadTable(filename='Q_data.json')
 
     if not state in Q:
         action=random_choice(valid_moves(state,player))
@@ -35,6 +35,8 @@ def get_robot_move(state,player):
 
     return action
 
+def wait_for_turn():
+    x=input('Hit return to continue')
 
 def do_victory_dance():
     print("yay")
@@ -42,25 +44,25 @@ def do_victory_dance():
 
 player=1
 while True:
-    wait_for_turn()
+    wait_for_turn()   # <=== need to write
 
-    state=read_state()
+    state=read_state()    # <=== need to write
 
     move=get_robot_move(state,player)
 
-    make_move(state,move)  # does it need the state here?
+    make_move(state,move)  # does it need the state here?    # <=== need to write
 
     new_state=update_state(state,player,move)
     status=win_status(state,player)
 
     if status=='win':
-        do_victory_dance()
+        do_victory_dance()    # <=== need to write
         break
     elif status=='lose':
-        do_sad_dance()
+        do_sad_dance()    # <=== need to write
         break
     elif status=='stalemate':
-        do__meh_dance()
+        do__meh_dance()    # <=== need to write
         break
     else:
         pass
