@@ -74,7 +74,8 @@ def get_square_size(arr,Nr,Nc,r,c,size=None):
     return square
 
 from Game import Board
-from imageio import imwrite
+#from imageio import imwrite
+from scipy.misc import imsave as imwrite
 import os
 from glob import glob
 
