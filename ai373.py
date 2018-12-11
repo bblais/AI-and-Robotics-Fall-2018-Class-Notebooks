@@ -13,7 +13,7 @@ def read_image(fname,crop=None):  # crop=s_[30:260,45:310]
     if np.any(arr>1):  # if the image is read in as uint8, it's not 0-1 but 0-255, so scale it down
         print("Min and Max",arr.min(),arr.max())
         print("Scaling it down....")
-        arr=arr/255
+        arr=arr/255.0
         print("Min and Max",arr.min(),arr.max())    
         
     if len(arr.shape)>2 and arr.shape[2]>3:  # alpha channel
